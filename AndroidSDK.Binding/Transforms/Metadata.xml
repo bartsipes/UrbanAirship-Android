@@ -7,6 +7,21 @@
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
   -->
   <remove-node path="/api/package[@name='com.google.protobuf']" />
+  <remove-node path="/api/package[@name='com.urbanairship.push.embedded']" />
+  
   <attr path="/api/package[@name='com.urbanairship.util']/class[@name='AsyncImageLoader.Delegate']" name="managedName">AsyncImageLoader.AsyncImageLoaderDelegate</attr>
   <attr path="/api/package[@name='com.urbanairship.util']/class[@name='UnzipperTask.Delegate']" name="managedName">UnzipperTask.UnzipperTaskDelegate</attr>
+
+  <attr path="/api/package[@name='com.urbanairship.preference']/class[@name='UACheckBoxPreference']" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.urbanairship.preference']/class[@name='QuietTimePickerPreference']" name="visibility">public</attr>
+
+  <remove-node path="/api/package[@name='com.urbanairship.preference']/class[@name='QuietTimePickerPreference']" />
+  <remove-node path="/api/package[@name='com.urbanairship.preference']/class[@name='UACheckBoxPreference']" />
+
+  <remove-node path="/api/package[@name='com.urbanairship.preference']/class[@name='QuietTimeEndPreference']/method[@name='getSummary']" />
+  <remove-node path="/api/package[@name='com.urbanairship.preference']/class[@name='QuietTimeStartPreference']/method[@name='getSummary']" />
+
+  <attr path="/api/package/class[@extends='android.app.IntentService']" name="extends">mono.android.app.IntentService</attr>
+
+  <attr path="/api/package[@name='com.urbanairship']/class[@name='AirshipConfigOptions']/field[@name='transport']" name="managedName">TransportField</attr>
 </metadata>

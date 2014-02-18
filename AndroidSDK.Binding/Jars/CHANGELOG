@@ -1,12 +1,115 @@
-Version 2.1.2 - February 15, 2012
+Android ChangeLog
+=================
+
+Version 3.3.0 - January 15, 2014
+================================
+- For rich push enabled apps, automatically refresh rich push messages when the application is foregrounded.
+- Remove unused RichPushManager listener callbacks.
+- Prevent multiple APID registration when database read and write failures occur.
+
+Sample changes:
+- Remove action bar sherlock dependency, replaced with AppCompat in the android support v7 library.
+- Added calls to the webkit's onPause/onResume methods for api >= 11 when displaying a rich push message.
+- Android Gradle plugin support (Gradle 1.9 with the plugin 0.7.0).
+
+
+Version 3.2.3 - December 19, 2013
+=================================
+- Fix possible NPE when the rich push service unexpectedly die.
+- Fix a possible crash in the content resolver when it throws an unexpected runtime exception.
+
+Version 3.2.2 - December 4, 2013
+================================
+- Exposes UA push identifiers to the application in the push receiver and notification builder.
+
+Version 3.2.1 - November 18, 2013
+================================
+- Fixed database exception crash when uploading analytics in multi-process applications.
+
+Version 3.2.0 - October 31, 2013
+================================
+- Added support for server side expired Rich Push Messages.
+- Added support for setting contentIntent on a notification through the notification builder.
+- Added process manifest validation for Urban Airship services and receivers.
+- Added pre-authorization headers when displaying rich push messages through the RichPushMessageView.
+- Added wake lock expiration to ensure wake locks do not wake the app indefinitely.
+- Fix permission crash when using location with permission ACCESS_COARSE_LOCATION.
+
+Version 3.1.0 - July 31, 2013
+=============================
+- Removed tags and alias from rich push user. Tags and aliases are now only set on the APID.
+- QuietTimePickerPreference now respects the system/locale settings in UI components.
+- Rich push inbox style notification now respects quiet time, vibrate, and sound preferences.
+- Updated third party license.
+- Updated copyrights.
+- Built-in methods for JavaScript embedded in rich push messages:
+  - Added getMessageSentDateMS that returns the unix epoch time in milliseconds.
+  - Added seconds to getMessageSentDate to return format "yyyy-MM-dd HH:mm:ss.SSSZ".
+
+Version 3.0.0 - June 10, 2013
+=============================
+Please see migration guide in Urban Airship http://docs.urbanairship.com/topic_guides/android_migration.html
+
+- Rich Push Inbox no longer implements or exposes any cursors.
+- Added warnings when running on BlackBerry.
+- Added default Android preferences for push, location, vibration, quiet time and sound.
+- Added RichPushMessageView to easily display rich push message for API level >= 5.
+- Removed Helium and hybrid push transportations. Only GCM is supported.
+- Removed Push Worker Service.
+
+- Fixed Rich Push crash at first start when the device has no internet.
+- Fixed activity instrumentation warnings when analytics is disabled.
+- Fixed crash in location service when the network provider is missing.
+- Fixed security exception crash when registering with GCM.
+- Fixed javascript bridge on devices targetting API 17 because of missing annotation.
+
+Rich Push Sample changes:
+- New preferences screen using built-in Android preferences
+  - Added Advanced Settings: APID, UserID, Set Alias, Add Tags
+- Updated the Home and Inbox layouts
+- Removed the cursor adapter
+- Added a Home screen and key guard Inbox widget
+- Added a custom Inbox style notification builder
+- Added automated ui tests
+
+Push Sample changes:
+- Added extra preferences screen using built-in Android preferences
+
+Version 2.1.4 - April 4, 2013
+=================================
+- Fixed crash when switching rapidly between message and inbox views for RichPushSample.
+- Fixed crash in phone layout whenever a message is opened from a push notification for RichPushSample.
+- Add ActivityLifecycleCallbacks to record session events and warn devs for incomplete implementation.
+  Make instrumentation activities in API 14 (Ice Cream Sandwich) optional.
+  Added 'minimumSdkVersion' parameter in airshipconfig.properties file. This value is used for detecting
+  incomplete activity instrumentation.
+
+Version 2.1.3 - March 22, 2013
+=================================
+- Use application package name instead of app name for user-agent creation.
+- Fixed crash in inbox view running on a non-paned (phone) view for RichPushSample. 
+- Added validation for integer values in .properties files
+- Added a foreground location enabled preference. If the background location enabled preference is true,
+  then the foreground location enabled is implicitly enabled. Added foreground location enabled checkbox
+  to the Push Sample app.
+- Modified recordCurrentLocation() and recordCurrentLocation(criteria) methods to handle the binding
+  to the LocationService if it has not been bound already. This will save devs some trouble when
+  they just want to record the current location without binding to the service. 
+- Updated README and documentation with correct links and updated config options.
+- Replaced deprecated 'horizontalAccuracy' location configuration property with 'accuracy'.
+- Updated sample config files to use strings for properties mapped to system constants..
+- Updated sample apps to use the default Android Proguard config file. 
+
+Version 2.1.2 - February 15, 2013
+=================================
 - Fix for push opt-out analytics
 
-Version 2.1.1 - February 14, 2012
+Version 2.1.1 - February 14, 2013
 =================================
 - Now with Rich Push
 - Property files now allow strings in addition to integer values for properties mapped to system constants
 
-Version 2.1.0 - February 7, 2012
+Version 2.1.0 - February 7, 2013
 ================================
 - Moved In-App Purchase code from the library to the IAP Sample.
 
