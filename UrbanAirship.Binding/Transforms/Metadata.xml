@@ -6,6 +6,14 @@
   This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
   -->
+
+  <attr path="/api/package[@name='com.urbanairship']" name="managedName">UrbanAirship</attr>
+  <attr path="/api/package[@name='com.urbanairship.analytics']" name="managedName">UrbanAirship.AnalyticsAPI</attr>
+  <attr path="/api/package[@name='com.urbanairship.location']" name="managedName">UrbanAirship.Locations</attr>
+  <attr path="/api/package[@name='com.urbanairship.push']" name="managedName">UrbanAirship.Push</attr>
+  <attr path="/api/package[@name='com.urbanairship.restclient']" name="managedName">UrbanAirship.RestClient</attr>
+  <attr path="/api/package[@name='com.urbanairship.richpush']" name="managedName">UrbanAirship.RichPush</attr>
+
   <remove-node path="/api/package[@name='com.google.protobuf']" />
   <remove-node path="/api/package[@name='com.urbanairship.push.embedded']" />
   
@@ -24,4 +32,6 @@
   <attr path="/api/package/class[@extends='android.app.IntentService']" name="extends">mono.android.app.IntentService</attr>
 
   <attr path="/api/package[@name='com.urbanairship']/class[@name='AirshipConfigOptions']/field[@name='transport']" name="managedName">TransportField</attr>
+
+  <attr path="/api/package/class/method[@name='compareTo']/parameter[1]" name="managedType">Java.Lang.Object</attr>
 </metadata>

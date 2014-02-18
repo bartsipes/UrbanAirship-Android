@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanAirship.Binding", "AndroidSDK.Binding\UrbanAirship.Binding.csproj", "{8013A738-653C-421D-AF61-B6E1FD5E84C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanAirship.Binding", "UrbanAirship.Binding\UrbanAirship.Binding.csproj", "{8013A738-653C-421D-AF61-B6E1FD5E84C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = AndroidSDK.Binding\AndroidSDK.Binding.csproj
+		StartupItem = UrbanAirship.Binding\UrbanAirship.Binding.csproj
 	EndGlobalSection
 EndGlobal
